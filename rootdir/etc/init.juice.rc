@@ -3,6 +3,9 @@ on boot
     chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap
 
+    # Enable suspend to idle mode to reduce latency during suspend/resume
+    write /sys/power/mem_sleep "s2idle"
+
 on init
     # Report max frequency to some tasks.
     write /proc/sys/kernel/sched_lib_name "com.miHoYo.,UnityMain,libunity.so,libfb.so"

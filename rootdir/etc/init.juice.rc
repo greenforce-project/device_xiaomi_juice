@@ -6,6 +6,9 @@ on boot
     # Enable suspend to idle mode to reduce latency during suspend/resume
     write /sys/power/mem_sleep "s2idle"
 
+    # Thermal Profile
+    write /sys/class/thermal/thermal_message/sconfig 0
+
 on init
     # Report max frequency to some tasks.
     write /proc/sys/kernel/sched_lib_name "com.miHoYo.,UnityMain,libunity.so,libfb.so"

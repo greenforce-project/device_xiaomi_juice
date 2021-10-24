@@ -33,6 +33,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.media_vol_steps=15 \
     vendor.audio.offload.buffer.size.kb=256
 
+# IORap
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+
 # Always use GPU for screen compositing
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_hwc_overlays=1

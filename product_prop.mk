@@ -14,13 +14,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PRODUCT_PROPERTIES += \
-    debug.hwui.renderer=opengl \
+    debug.hwui.renderer=skiagl \
+    debug.sf.hw=1 \
     debug.sf.latch_unsignaled=1 \
     debug.sf.disable_backpressure=1 \
     debug.sf.disable_hwc_overlays=1 \
     debug.sdm.support_writeback=0 \
     debug.enable.sglscale=1 \
+    debug.egl.hw=1 \
     debug.mdpcomp.logs=0 \
+    persist.sys.scrollingcache=1 \
     debug.sf.recomputecrop=0 \
     vendor.display.disable_rotator_downscale=1 \
     ro.surface_flinger.use_color_management=true \
@@ -37,10 +40,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # IORap
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.device_config.runtime_native_boot.iorap_readahead_enable=true
-
-# Always use GPU for screen compositing
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.disable_hwc_overlays=1
 
 # Power-saving props
 PRODUCT_PROPERTY_OVERRIDES += \

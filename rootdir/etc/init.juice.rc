@@ -3,6 +3,11 @@ on boot
     chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap
 
+on init
+    # Report max frequency to some tasks.
+    write /proc/sys/kernel/sched_lib_name "com.miHoYo.,UnityMain,libunity.so,libfb.so"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
 on property:sys.boot_completed=1
     # Restrict permissions to socket file
     # to hide Magisk & co.

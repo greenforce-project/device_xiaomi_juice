@@ -34,7 +34,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.media_vol_steps=15 \
+    ro.config.media_vol_steps=8 \
     vendor.audio.offload.buffer.size.kb=256
 
 # IORap
